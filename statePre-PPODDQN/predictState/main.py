@@ -10,6 +10,8 @@ from trajectory_prediction.inputData import get_dataloaderById
 from trajectory_prediction.model import NNPred
 from trajectory_prediction.trajectory_dataPrepare8 import get_dataloader
 
+# test
+
 torch.cuda.set_device(0)
 csvTurn = './my_data/interactive_formation_improve.csv'
 length = 50
