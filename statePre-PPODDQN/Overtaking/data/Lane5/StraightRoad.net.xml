@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--version：路网文件版本号 第二个是命名空间 第三个是验证文件的结构和内容-->
+<net version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+    <!--location是定义 SUMO 路网的位置和投影参数。第一个参数定义路网的偏移量，指定路网坐标系的原点，第二个参数是指定路网的边界范围，第三个参数定义原始坐标系的边界框，
+用于将坐标映射到 SUMO 路网坐标系，第四个参数定义投影参数，用于将坐标从原始坐标系投影到 SUMO 路网坐标系-->
+    <location netOffset="0.0,-17.6" alignB="true" xAxis="DOWN" yAxis="RIGHT" convBoundary="0.00,0.00,3000.00,0.00" origBoundary="-100000.00,-100000.00,100000.00,100000.00" projParameter="!"/>
+    <!--edge定义路网中的道路边缘。第一个是边缘唯一标识符；第二个参数是指定边缘的起始节点，第三个参数指定边缘的结束节点，第四个参数指定边缘的优先级，
+    第5个参数定义边缘的长度-->
+    <edge id="Lane" from="gneJ0" to="gneJ1" priority="1" length="3000">
+        <!--第一个参数定义车道的唯一标识符，第二个参数定义车道的索引，表示车道在边缘中的位置，第三个参数定义车道的速度，第四个定义车道的长度。还有shape属性来定义车道的形状-->
+        <!--index="0"对应最下方的车道-->
+        <lane id="Lane_0" index="0" speed="20" length="3000.00" shape="0.00,-11.20 3000.00,-11.20"/>
+        <lane id="Lane_1" index="1" speed="20" length="3000.00" shape="0.00,-8.00 3000.00,-8.00"/>
+        <lane id="Lane_2" index="2" speed="20" length="3000.00" shape="0.00,-4.80 3000.00,-4.80"/>
+        <lane id="Lane_3" index="3" speed="20" length="3000.00" shape="0.00,-14.40 3000.00,-14.4"/>
+        <lane id="Lane_4" index="4" speed="20" length="3000.00" shape="0.00,-17.60 3000.00,-17.6"/>
+    </edge>
+    <!--定义路网中的交叉口，第一个唯一标识符，第二个指定交叉口的类型，x和y交叉口的坐标，第四个定义进入交叉口的车道，第五个定义交叉口内部的车道，第六个定义交叉口的形状-->
+    <junction id="gneJ0" type="dead_end" x="0.00" y="0.00" incLanes="" intLanes="" shape="0.00,0.00 0.00,-18.00"/>
+    <junction id="gneJ1" type="dead_end" x="3000.00" y="0.00" incLanes="Lane_0 Lane_1 Lane_2 Lane_3 Lane_4" intLanes="" shape="3000.00,-18.00 3000.00,0.00"/>
+</net>
